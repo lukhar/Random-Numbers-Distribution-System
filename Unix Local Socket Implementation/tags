@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BINDIR	Makefile	/^BINDIR	=	bin$/;"	m
+CC	Makefile	/^CC		=	gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS	= 	-g -std=c99$/;"	m
+SRCDIR	Makefile	/^SRCDIR	=	src$/;"	m
+UTIL	src/utils/util.h	2;"	d
+calculate_sequence_size	src/utils/util.c	/^unsigned int calculate_sequence_size(unsigned int bit_number)$/;"	f	signature:(unsigned int bit_number)
+calculate_sequence_size	src/utils/util.h	/^unsigned int calculate_sequence_size(unsigned int bit_number);$/;"	p	signature:(unsigned int bit_number)
+default_protocol	src/client/client.c	/^const int default_protocol = 0;$/;"	v
+default_protocol	src/daemon/daemon.c	/^const int default_protocol = 0;$/;"	v
+generate_random_sequence	src/utils/util.c	/^int8_t* generate_random_sequence(int8_t* random_sequence, unsigned int nbytes)$/;"	f	signature:(int8_t* random_sequence, unsigned int nbytes)
+generate_random_sequence	src/utils/util.h	/^int8_t* generate_random_sequence(int8_t* random_sequence, unsigned int nbytes);$/;"	p	signature:(int8_t* random_sequence, unsigned int nbytes)
+generate_random_sequence_from_source	src/utils/util.c	/^int8_t* generate_random_sequence_from_source(const char* source_path, int8_t* random_sequence, unsigned int nbytes)$/;"	f	signature:(const char* source_path, int8_t* random_sequence, unsigned int nbytes)
+generate_random_sequence_from_source	src/utils/util.h	/^int8_t* generate_random_sequence_from_source(const char* source_path, int8_t* random_sequence, unsigned int nbytes);$/;"	p	signature:(const char* source_path, int8_t* random_sequence, unsigned int nbytes)
+main	src/client/client.c	/^int main(int argc, char **argv)$/;"	f	signature:(int argc, char **argv)
+main	src/daemon/daemon.c	/^int main(int argc, char *argv[]) $/;"	f	signature:(int argc, char *argv[])
+print_sequence	src/utils/util.c	/^void print_sequence(int8_t* sequnece, unsigned int sequence_size) $/;"	f	signature:(int8_t* sequnece, unsigned int sequence_size)
+print_sequence	src/utils/util.h	/^void print_sequence(int8_t* sequnece, unsigned int sequence_size);$/;"	p	signature:(int8_t* sequnece, unsigned int sequence_size)
+readn	src/utils/util.c	/^ssize_t readn(int fd, void *vptr, size_t n)$/;"	f	signature:(int fd, void *vptr, size_t n)
+readn	src/utils/util.h	/^ssize_t readn(int fd, void *vptr, size_t n);$/;"	p	signature:(int fd, void *vptr, size_t n)
+writen	src/utils/util.c	/^ssize_t writen(int fd, const void *vptr, size_t n)$/;"	f	signature:(int fd, const void *vptr, size_t n)
+writen	src/utils/util.h	/^ssize_t writen(int fd, const void *vptr, size_t n);$/;"	p	signature:(int fd, const void *vptr, size_t n)
