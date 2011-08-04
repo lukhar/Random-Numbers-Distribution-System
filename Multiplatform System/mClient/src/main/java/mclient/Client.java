@@ -51,20 +51,31 @@ public class Client implements Runnable {
             socketWriter.write(sequenceLength);
             socketWriter.newLine();
             socketWriter.flush();
-            socketReader.readLine();
+            while (socketReader.readLine() != null);
             long dataTransferTime = System.nanoTime() - startTime;
 
             startTime = System.nanoTime();
+            socketReader.close();
+            socketWriter.close();
             socket.close();
             long connectionCloseTime = System.nanoTime() - startTime;
 
             long sequenceSize = Long.valueOf(sequenceLength) / 8;
 
-            System.out.printf("%d %4.6f %4.6f %4.6f\n", sequenceSize, (connectionCloseTime / 1000000000.0),
-                    (dataTransferTime / 1000000000.0), (connectionCloseTime / 1000000000.0));
+            System.out.printf("%d %4.6f %4.6f %4.6f\n",
+                    sequenceSize,
+                    convertToSeconds(connectionEstablishTime),
+                    convertToSeconds(dataTransferTime),
+                    convertToSeconds(connectionCloseTime));
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private double convertToSeconds(long elapsedTime) {
+        double numberOfNanosecondsInSecond = 1000000000.0;
+
+        return elapsedTime / numberOfNanosecondsInSecond;
     }
 }
