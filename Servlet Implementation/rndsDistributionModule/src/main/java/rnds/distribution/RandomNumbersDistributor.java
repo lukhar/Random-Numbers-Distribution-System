@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import rnds.generator.model.FileRandomBitGenerator;
 import rnds.generator.model.NativeRandomBitGenerator;
 
 public class RandomNumbersDistributor extends HttpServlet {
@@ -20,6 +21,8 @@ public class RandomNumbersDistributor extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
+        PrintWriter out = resp.getWriter();
+
         String output;
 
         try {
@@ -27,29 +30,20 @@ public class RandomNumbersDistributor extends HttpServlet {
             int packagesAmount = Integer.valueOf(req.getParameter("packagesAmount"));
 
 
-            NativeRandomBitGenerator generatorManager = new NativeRandomBitGenerator();
+            FileRandomBitGenerator randomBitGenerator = new FileRandomBitGenerator("/opt/RandomNumbersSource");
 
             for (int i = 0; i < packagesAmount; ++i) {
-                output = generatorManager.generateSequence(sequenceLength);
+                output = randomBitGenerator.generateSequence(sequenceLength);
 
-                sendData(resp, output);
+                out.println(output);
             }
 
         } catch (NumberFormatException e) {
             output = "Invalid value submitted !";
+        } finally {
+            out.close();
         }
 
 
-    }
-
-    private void sendData(HttpServletResponse resp, String output) throws IOException {
-        PrintWriter out = resp.getWriter();
-        out.println(output);
-
-
-//        req.setAttribute("response", response);
-//        RequestDispatcher requestDispatcher = req
-//                .getRequestDispatcher("generatedBits.jsp");
-//        requestDispatcher.forward(req, resp);
     }
 }

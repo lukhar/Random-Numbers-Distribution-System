@@ -47,7 +47,7 @@ public class Client implements Runnable {
         try {
             String query = "sequenceLength=" + URLEncoder.encode(sequenceLength, "UTF-8");
 
-            URL url = new URL(servletAddress+ "?" + "sequenceLength="
+            URL url = new URL(servletAddress + "?" + "sequenceLength="
                     + sequenceLength + "&" + "packagesAmount=" + packagesAmount);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             HttpURLConnection.setFollowRedirects(true);
@@ -66,10 +66,10 @@ public class Client implements Runnable {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));
 
-
-//            while (reader.readLine() != null) {
-////               System.out.println(response);
-//            }
+            String response;
+         //  while ((/*response = */reader.readLine()) != null); /*{
+////                System.out.println(response);
+////            }*/
 
             long dataTransferTime = System.nanoTime() - startTime;
 
