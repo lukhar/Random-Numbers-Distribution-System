@@ -1,46 +1,47 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-          <groupId>rnds</groupId>
-          <artifactId>rndsSystem</artifactId>
-          <version>1.0-SNAPSHOT</version>
-          <relativePath>../rndsSystem/pom.xml</relativePath>
+        <groupId>rnds</groupId>
+        <artifactId>rndsSystem</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../rndsSystem/pom.xml</relativePath>
     </parent>
 
-	
-	<groupId>rnds.distribution</groupId>
-	<artifactId>rndsDistributionModule</artifactId>
-	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
 
-	<name>rndsDistributionModule Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+    <groupId>rnds.distribution</groupId>
+    <artifactId>rndsDistributionModule</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-	<dependencies>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-		</dependency>
+    <name>rndsDistributionModule Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
         <dependency>
             <groupId>rnds.generator.model</groupId>
             <artifactId>rndsDataModule</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-	</dependencies>
 
-	<build>
-		<finalName>rndsDistributionModule</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>tomcat-maven-plugin</artifactId>
-				<configuration>
-					<server>tomcatserver</server>
+    </dependencies>
+
+    <build>
+        <finalName>rndsDistributionModule</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <configuration>
+                    <server>tomcatserver</server>
                     <path>/rndsDistributionModule</path>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -24,13 +24,13 @@ public class RandomNumbersDistributorTest extends TestCase {
 		HttpServletRequest httpRequest = mock(HttpServletRequest.class);
 		HttpServletResponse httpResponse = mock(HttpServletResponse.class);
 		OutputStream out = new ByteArrayOutputStream();
-		
+
 		// when
 		when(httpRequest.getParameter("sequenceLength")).thenReturn("400");
 		when(httpResponse.getWriter()).thenReturn(new PrintWriter(out));
-		
+
 		new RandomNumbersDistributor().doPost(httpRequest, httpResponse);
-		
+
 		// then
 		//assertEquals(400, out.toString().length());
 	}
