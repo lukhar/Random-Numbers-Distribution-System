@@ -1,14 +1,13 @@
 package rnds.distribution;
 
-import java.io.*;
+import rnds.generator.model.FileRandomBitGenerator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import rnds.generator.model.FileRandomBitGenerator;
-import rnds.generator.model.NativeRandomBitGenerator;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class RandomNumbersDistributor extends HttpServlet {
 

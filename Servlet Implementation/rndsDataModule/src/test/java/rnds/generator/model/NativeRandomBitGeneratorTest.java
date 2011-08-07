@@ -1,13 +1,8 @@
 package rnds.generator.model;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-import junit.framework.TestCase;
-
 import org.junit.Test;
+
+import java.io.IOException;
 
 import static org.fest.assertions.Assertions.assertThat;
 
