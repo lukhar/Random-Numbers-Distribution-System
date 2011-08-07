@@ -24,7 +24,7 @@ public class Client implements Runnable {
     public Client(String[] args) throws IOException {
         if (args.length < 3) {
             System.out.println("Wrong number of parameters Client <server_address> <port> <sequence_size>");
-            return;
+            System.exit(1);
         }
         this.socket = new Socket();
         this.serverAddress = args[0];
