@@ -22,6 +22,7 @@ target
 build
 bin
 dist
+output*MB
 
 # Packages #
 ############

@@ -31,7 +31,7 @@ public class Client implements Runnable {
     public Client(String[] args) {
         if (args.length < 2) {
             System.out.println("Wrong number of parameters Client <servlet_address> <sequence_length> <packages_amount>");
-            return;
+            System.exit(1);
         }
 
         this.servletAddress = args[0];
@@ -67,7 +67,7 @@ public class Client implements Runnable {
                     new InputStreamReader(connection.getInputStream()));
 
             String response;
-         //  while ((/*response = */reader.readLine()) != null); /*{
+             while ((/*response = */reader.readLine()) != null); /*{
 ////                System.out.println(response);
 ////            }*/
 
