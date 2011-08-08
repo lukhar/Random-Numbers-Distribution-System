@@ -24,8 +24,8 @@ public class Client implements Runnable {
 
 
     public Client(String[] args) throws IOException {
-        if (args.length < 3) {
-            System.out.println("Wrong number of parameters Client <server_address> <port> <sequence_size>");
+        if (args.length < 4) {
+            System.out.println("Wrong number of parameters Client <server_address> <port> <sequence_size> <packages_amount>");
             System.exit(1);
         }
         this.socket = new Socket();
@@ -71,7 +71,7 @@ public class Client implements Runnable {
             socket.close();
             long connectionCloseTime = System.nanoTime() - startTime;
 
-            long sequenceSize = Long.valueOf(sequenceLength) / 8;
+            long sequenceSize = sequenceLength / 8;
 
             System.out.printf("%d %4.6f %4.6f %4.6f\n",
                     sequenceSize,
