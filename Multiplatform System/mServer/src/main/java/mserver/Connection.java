@@ -31,9 +31,13 @@ public class Connection implements Runnable {
     public void run() {
         try {
             int sequenceLength = Integer.parseInt(inputReader.readLine());
-            System.out.println("sequence length : " + sequenceLength);
-            outputWriter.write(randomNumbersGenerator
-                    .generateSequence(sequenceLength));
+            int packagesAmount = Integer.parseInt(inputReader.readLine());
+            System.out.println("sequence length : " + sequenceLength + " packages amount : " + packagesAmount);
+
+            for (int i = 0; i < packagesAmount; ++i) {
+                outputWriter.write(randomNumbersGenerator
+                        .generateSequence(sequenceLength));
+            }
             outputWriter.close();
 
         } catch (IOException e) {

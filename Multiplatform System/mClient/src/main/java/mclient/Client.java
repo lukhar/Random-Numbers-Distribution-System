@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class Client implements Runnable {
 
     private Socket socket;
-    private String sequenceLength;
+    private int sequenceLength;
     private String serverAddress;
     private int portNumber;
     private int packagesAmount;
@@ -31,8 +31,8 @@ public class Client implements Runnable {
         this.socket = new Socket();
         this.serverAddress = args[0];
         this.portNumber = Integer.parseInt(args[1]);
-        this.sequenceLength = args[2];
-        this.packagesAmount = Integer.parseInt(args[3]);
+        this.sequenceLength = Integer.valueOf(args[2]);
+        this.packagesAmount = Integer.valueOf(args[3]);
     }
 
     public static void main(String[] args) throws IOException {
@@ -51,10 +51,18 @@ public class Client implements Runnable {
             BufferedReader socketReader = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
 
-            socketWriter.write(sequenceLength);
+            socketWriter.write(String.valueOf(sequenceLength));
             socketWriter.newLine();
             socketWriter.flush();
-            while (socketReader.readLine() != null);
+
+            socketWriter.write(String.valueOf(packagesAmount));
+            socketWriter.newLine();
+            socketWriter.flush();
+
+            char[] buf = new char[sequenceLength];
+            for (int i = 0; i < packagesAmount; ++i) {
+                socketReader.read(buf, 0, sequenceLength);
+            }
             long dataTransferTime = System.nanoTime() - startTime;
 
             startTime = System.nanoTime();
