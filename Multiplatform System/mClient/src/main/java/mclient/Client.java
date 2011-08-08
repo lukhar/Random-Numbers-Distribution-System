@@ -60,9 +60,8 @@ public class Client implements Runnable {
             socketWriter.flush();
 
             char[] buf = new char[sequenceLength];
-            for (int i = 0; i < packagesAmount; ++i) {
-                socketReader.read(buf, 0, sequenceLength);
-            }
+            while(socketReader.read(buf, 0, sequenceLength) != -1);
+
             long dataTransferTime = System.nanoTime() - startTime;
 
             startTime = System.nanoTime();
