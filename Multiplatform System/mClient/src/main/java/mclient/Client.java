@@ -20,6 +20,8 @@ public class Client implements Runnable {
     private String sequenceLength;
     private String serverAddress;
     private int portNumber;
+    private int packagesAmount;
+
 
     public Client(String[] args) throws IOException {
         if (args.length < 3) {
@@ -30,6 +32,7 @@ public class Client implements Runnable {
         this.serverAddress = args[0];
         this.portNumber = Integer.parseInt(args[1]);
         this.sequenceLength = args[2];
+        this.packagesAmount = Integer.parseInt(args[3]);
     }
 
     public static void main(String[] args) throws IOException {

@@ -35,11 +35,13 @@ public class RandomNumbersDistributor extends HttpServlet {
                 output = randomBitGenerator.generateSequence(sequenceLength);
 
                 out.println(output);
+
             }
 
         } catch (NumberFormatException e) {
             output = "Invalid value submitted !";
         } finally {
+            out.flush();
             out.close();
         }
 

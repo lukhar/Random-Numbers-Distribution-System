@@ -47,7 +47,7 @@ int main(int argc, char **argv)
     gettimeofday(&endtime, 0x0);
 	timeval_subtract(&connection_open_time, &endtime, &starttime);
 
-    sequence_size = calculate_sequence_size(sequence_length * transfer_amount);
+    sequence_size = calculate_sequence_size(sequence_length);
 
     gettimeofday(&starttime, 0x0);
     if (write(socket_fd, &sequence_size, sizeof sequence_size) < 0) {
@@ -82,7 +82,7 @@ int main(int argc, char **argv)
 	timeval_subtract(&connection_close_time, &endtime, &starttime);
 
     printf("%d %f %f %f\n", 
-            sequence_size,
+            sequence_size * transfer_amount,
             connection_open_time.tv_sec + connection_open_time.tv_usec / 1000000.0, 
             data_transfer_time.tv_sec + data_transfer_time.tv_usec / 1000000.0, 
             connection_close_time.tv_sec + connection_close_time.tv_usec / 1000000.0);
