@@ -11,18 +11,21 @@ import java.net.URLEncoder;
 public class Client implements Runnable {
 
     private String servletAddress;
-    private String sequenceLength;
-    private String packagesAmount;
+    private int sequenceLength;
+    private int packagesAmount;
+    private int sequenceSize;
 
     public Client(String[] args) {
         if (args.length < 2) {
             System.out.println("Wrong number of parameters Client <servlet_address> <sequence_length> <packages_amount>");
-            System.exit(1);
+            System.exit(-1);
         }
 
         this.servletAddress = args[0];
-        this.sequenceLength = args[1];
-        this.packagesAmount = args[2];
+        this.sequenceLength = Integer.valueOf(args[1]);
+        this.packagesAmount = Integer.valueOf(args[2]);
+        this.sequenceSize = (sequenceLength % Character.SIZE == 0) ?
+                (sequenceLength / Character.SIZE) : (sequenceLength / Character.SIZE + 1);
     }
 
     public static void main(String[] args) {
@@ -31,10 +34,8 @@ public class Client implements Runnable {
 
     public void run() {
         try {
-            String query = "sequenceLength=" + URLEncoder.encode(sequenceLength, "UTF-8");
-
             URL url = new URL(servletAddress + "?" + "sequenceLength="
-                    + sequenceLength + "&" + "packagesAmount=" + packagesAmount);
+                    + sequenceSize + "&" + "packagesAmount=" + packagesAmount);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             HttpURLConnection.setFollowRedirects(true);
             connection.setDoOutput(true);
@@ -52,10 +53,10 @@ public class Client implements Runnable {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));
 
-            String response;
-             while ((/*response = */reader.readLine()) != null); /*{
-////                System.out.println(response);
-////            }*/
+            char[] buf = new char[sequenceSize];
+            while(reader.read(buf, 0, sequenceSize) != -1) {
+                System.out.println(buf);
+            }
 
             long dataTransferTime = System.nanoTime() - startTime;
 
@@ -64,10 +65,10 @@ public class Client implements Runnable {
             connection.disconnect();
             long connectionCloseTime = System.nanoTime() - startTime;
 
-            long sequenceSize = Long.valueOf(sequenceLength) * Long.valueOf(packagesAmount) / 8;
+
 
             System.out.printf("%d %4.6f %4.6f %4.6f\n",
-                    sequenceSize,
+                    sequenceSize * packagesAmount * 2,
                     convertToSeconds(connectionEstablishTime),
                     convertToSeconds(dataTransferTime),
                     convertToSeconds(connectionCloseTime));

@@ -2,6 +2,7 @@ package mserver;
 
 import generators.FileNumbersGenerator;
 import generators.NativeNumbersGenerator;
+import generators.RandomNumbersGenerator;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -19,6 +20,7 @@ public class Server extends Thread {
 
     ServerSocket serverSocket;
     private int portNumber;
+    private RandomNumbersGenerator generator = new FileNumbersGenerator("/opt/RandomNumbersSource");
 
     public Server(int portNumber) throws IOException {
         this.portNumber = portNumber;
@@ -33,7 +35,7 @@ public class Server extends Thread {
         try {
             while (true) {
                 Socket clientSocket = serverSocket.accept();
-                Connection connection = new Connection(clientSocket, new FileNumbersGenerator("resources/TestRandomNumbersSource"));
+                Connection connection = new Connection(clientSocket, generator);
                 new Thread(connection).start();
             }
         } catch (IOException e) {

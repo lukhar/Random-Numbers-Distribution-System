@@ -25,7 +25,7 @@ public class FileRandomBitGenerator implements RandomBitGenerator {
                 sequenceLength + Integer.SIZE);
 
         do {
-            resultBuilder.append(Integer.toBinaryString(randomNumbersSource.read()));
+            resultBuilder.append(randomNumbersSource.read());
         } while (resultBuilder.length() < sequenceLength);
 
         return resultBuilder.substring(0, sequenceLength);

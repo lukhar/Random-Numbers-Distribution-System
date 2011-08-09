@@ -3,10 +3,6 @@ package mclient;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.SocketAddress;
-import java.sql.Time;
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,6 +17,7 @@ public class Client implements Runnable {
     private String serverAddress;
     private int portNumber;
     private int packagesAmount;
+    private int sequenceSize;
 
 
     public Client(String[] args) throws IOException {
@@ -33,6 +30,8 @@ public class Client implements Runnable {
         this.portNumber = Integer.parseInt(args[1]);
         this.sequenceLength = Integer.valueOf(args[2]);
         this.packagesAmount = Integer.valueOf(args[3]);
+        this.sequenceSize = (sequenceLength % Character.SIZE == 0) ?
+                (sequenceLength / Character.SIZE) : (sequenceLength / Character.SIZE + 1);
     }
 
     public static void main(String[] args) throws IOException {
@@ -51,7 +50,7 @@ public class Client implements Runnable {
             BufferedReader socketReader = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
 
-            socketWriter.write(String.valueOf(sequenceLength));
+            socketWriter.write(String.valueOf(sequenceSize));
             socketWriter.newLine();
             socketWriter.flush();
 
@@ -59,8 +58,8 @@ public class Client implements Runnable {
             socketWriter.newLine();
             socketWriter.flush();
 
-            char[] buf = new char[sequenceLength];
-            while(socketReader.read(buf, 0, sequenceLength) != -1);
+            char[] buf = new char[sequenceSize];
+            while(socketReader.read(buf, 0, sequenceSize) != -1);
 
             long dataTransferTime = System.nanoTime() - startTime;
 
@@ -70,10 +69,8 @@ public class Client implements Runnable {
             socket.close();
             long connectionCloseTime = System.nanoTime() - startTime;
 
-            long sequenceSize = sequenceLength / 8;
-
             System.out.printf("%d %4.6f %4.6f %4.6f\n",
-                    sequenceSize,
+                    sequenceSize * packagesAmount * 2,
                     convertToSeconds(connectionEstablishTime),
                     convertToSeconds(dataTransferTime),
                     convertToSeconds(connectionCloseTime));
