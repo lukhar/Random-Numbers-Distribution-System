@@ -55,7 +55,7 @@ public class Client implements Runnable {
 
             char[] buf = new char[sequenceSize];
             while(reader.read(buf, 0, sequenceSize) != -1) {
-                System.out.println(buf);
+//                System.out.println(buf);
             }
 
             long dataTransferTime = System.nanoTime() - startTime;
