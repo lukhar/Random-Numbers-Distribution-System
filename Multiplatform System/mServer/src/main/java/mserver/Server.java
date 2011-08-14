@@ -1,14 +1,11 @@
 package mserver;
 
 import generators.FileNumbersGenerator;
-import generators.NativeNumbersGenerator;
 import generators.RandomNumbersGenerator;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import static com.sun.activation.registries.LogSupport.log;
 
 /**
  * Created by IntelliJ IDEA.

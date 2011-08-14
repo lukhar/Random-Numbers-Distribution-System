@@ -1,14 +1,10 @@
 package generators;
 
-import com.sun.deploy.panel.ITreeNode;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.fail;
+import static junit.framework.Assert.*;
 
 /**
  * Created by IntelliJ IDEA.

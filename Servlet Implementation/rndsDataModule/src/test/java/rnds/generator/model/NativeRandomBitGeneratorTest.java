@@ -7,7 +7,7 @@ import java.io.IOException;
 import static org.fest.assertions.Assertions.assertThat;
 
 
-public class NativeRandomBitGeneratorTest {
+public class NativeRandomBitGeneratorTest extends RandomBitGeneratorTest {
 
      @Test
     public void testShouldGenerateRandomSequence() throws IOException {
