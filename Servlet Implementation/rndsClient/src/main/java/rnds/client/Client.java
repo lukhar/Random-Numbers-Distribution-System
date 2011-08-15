@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 
 public class Client implements Runnable {
 
@@ -55,7 +54,7 @@ public class Client implements Runnable {
 
             char[] buf = new char[sequenceSize];
             while(reader.read(buf, 0, sequenceSize) != -1) {
-                System.out.println(buf);
+                //System.out.println(buf);
             }
 
             long dataTransferTime = System.nanoTime() - startTime;
