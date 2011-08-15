@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,5 +29,20 @@ public class BinaryRandomBitGeneratorTest extends RandomBitGeneratorTest {
         // then
         assertNotNull(output);
         assertEquals("wrong data size", expectedDataLength, output.length);
+    }
+
+    @Test
+    public void testSeveralInvocations() throws IOException {
+        // given
+        int packagesAmount = 50;
+        int sequenceSize = 50;
+        BinaryRandomBitGenerator generator = new BinaryRandomBitGenerator(SOURCE);
+
+        // when
+        for (int i = 0; i < packagesAmount; ++i) {
+            generator.generateSequence(sequenceSize);
+        }
+
+        // then
     }
 }

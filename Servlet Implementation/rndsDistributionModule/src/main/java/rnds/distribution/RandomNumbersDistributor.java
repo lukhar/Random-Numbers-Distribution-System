@@ -21,21 +21,20 @@ public class RandomNumbersDistributor extends HttpServlet {
             throws ServletException, IOException {
 
         PrintWriter out = resp.getWriter();
+        String source = getServletContext().getInitParameter("randomNumbersSource");
 
         String output;
 
         try {
-            int sequenceLength = Integer.valueOf(req.getParameter("sequenceLength"));
+            int sequenceSize = Integer.valueOf(req.getParameter("sequenceSize"));
             int packagesAmount = Integer.valueOf(req.getParameter("packagesAmount"));
 
-
-            FileRandomBitGenerator randomBitGenerator = new FileRandomBitGenerator("/opt/RandomNumbersSource");
+            FileRandomBitGenerator randomBitGenerator = new FileRandomBitGenerator(source);
 
             for (int i = 0; i < packagesAmount; ++i) {
-                output = randomBitGenerator.generateSequence(sequenceLength);
+                output = randomBitGenerator.generateSequence(sequenceSize);
 
-                out.println(output);
-
+                out.write(output);
             }
 
         } catch (NumberFormatException e) {

@@ -1,18 +1,18 @@
-package rnds.generator.model;
+package generators;
 
 import java.io.*;
 
 /**
  * Created by IntelliJ IDEA.
  * User: lukash
- * Date: 8/13/11
- * Time: 11:06 PM
+ * Date: 8/15/11
+ * Time: 1:48 AM
  * To change this template use File | Settings | File Templates.
  */
-public class BinaryRandomBitGenerator {
+public class BinaryNumbersGenerator {
     private InputStream inputStream;
 
-    public BinaryRandomBitGenerator(String source) throws FileNotFoundException {
+    public BinaryNumbersGenerator(String source) throws FileNotFoundException {
         this.inputStream = new BufferedInputStream(new FileInputStream(source));
     }
 

@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>rnds.client.Client</mainClass>
+                            <mainClass>rnds.client.CharacterClient</mainClass>
                             <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>

@@ -27,4 +27,10 @@ public class FileNumbersGenerator implements RandomNumbersGenerator {
 
         return resultBuilder.substring(0, sequenceLength);
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        randomNumbersSource.close();
+        super.finalize();
+    }
 }

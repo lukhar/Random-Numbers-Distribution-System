@@ -24,18 +24,18 @@ public class BinaryRandomNumbersDistributor extends HttpServlet {
 
         resp.setContentType("application/octet-stream");
         ServletOutputStream out = resp.getOutputStream();
+        String source = getServletContext().getInitParameter("randomNumbersSource");
 
         byte[] output;
 
         try {
-            int sequenceLength = Integer.valueOf(req.getParameter("sequenceSize"));
+            int sequenceSize = Integer.valueOf(req.getParameter("sequenceSize"));
             int packagesAmount = Integer.valueOf(req.getParameter("packagesAmount"));
 
-            BinaryRandomBitGenerator randomBitGenerator = new BinaryRandomBitGenerator("/opt/RandomNumbersSource");
+            BinaryRandomBitGenerator randomBitGenerator = new BinaryRandomBitGenerator(source);
 
             for (int i = 0; i < packagesAmount; ++i) {
-                output = randomBitGenerator.generateSequence(sequenceLength);
-
+                output = randomBitGenerator.generateSequence(sequenceSize);
                 out.write(output);
             }
 
