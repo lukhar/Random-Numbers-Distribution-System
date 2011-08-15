@@ -1,46 +1,47 @@
 package rnds.distribution;
 
-import rnds.generator.model.FileRandomBitGenerator;
+import rnds.generator.model.BinaryRandomBitGenerator;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-public class RandomNumbersDistributor extends HttpServlet {
-
-    /**
-     *
-     */
-    private static final long serialVersionUID = -4717002943963557755L;
+/**
+ * Created by IntelliJ IDEA.
+ * User: lukash
+ * Date: 8/14/11
+ * Time: 9:33 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public class BinaryRandomNumbersDistributor extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        PrintWriter out = resp.getWriter();
+        resp.setContentType("application/octet-stream");
+        ServletOutputStream out = resp.getOutputStream();
         String source = getServletContext().getInitParameter("randomNumbersSource");
 
-        String output;
+        byte[] output;
 
         try {
             int sequenceSize = Integer.valueOf(req.getParameter("sequenceSize"));
             int packagesAmount = Integer.valueOf(req.getParameter("packagesAmount"));
 
-            FileRandomBitGenerator randomBitGenerator = new FileRandomBitGenerator(source);
+            BinaryRandomBitGenerator randomBitGenerator = new BinaryRandomBitGenerator(source);
 
             for (int i = 0; i < packagesAmount; ++i) {
                 output = randomBitGenerator.generateSequence(sequenceSize);
-
                 out.write(output);
             }
 
         } catch (NumberFormatException e) {
-            output = "Invalid value submitted !";
+            e.printStackTrace();
         } finally {
-            out.flush();
             out.close();
         }
     }

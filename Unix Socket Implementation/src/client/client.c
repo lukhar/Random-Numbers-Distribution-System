@@ -74,10 +74,10 @@ int main(int argc, char **argv)
             perror("client read()");
             exit(EXIT_FAILURE);
         }
-//        for (int i = 0; i < sequence_size; i++) {
-//            printf("%d", random_bit_sequence[i]);
-//        }
-//        printf("\n");
+        //for (int i = 0; i < sequence_size; i++) {
+        //    printf("%d", random_bit_sequence[i]);
+        //}
+        //printf("\n");
     }
     gettimeofday(&endtime, 0x0);
 	timeval_subtract(&data_transfer_time, &endtime, &starttime);

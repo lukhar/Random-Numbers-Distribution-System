@@ -1,14 +1,12 @@
 package mserver;
 
+import generators.BinaryNumbersGenerator;
 import generators.FileNumbersGenerator;
-import generators.NativeNumbersGenerator;
 import generators.RandomNumbersGenerator;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import static com.sun.activation.registries.LogSupport.log;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,6 +19,7 @@ public class Server extends Thread {
     ServerSocket serverSocket;
     private int portNumber;
     private RandomNumbersGenerator generator = new FileNumbersGenerator("/opt/RandomNumbersSource");
+    private BinaryNumbersGenerator gen = new BinaryNumbersGenerator("/opt/RandomNumbersSource");
 
     public Server(int portNumber) throws IOException {
         this.portNumber = portNumber;
@@ -35,7 +34,7 @@ public class Server extends Thread {
         try {
             while (true) {
                 Socket clientSocket = serverSocket.accept();
-                Connection connection = new Connection(clientSocket, generator);
+                BinaryConnection connection = new BinaryConnection(clientSocket, gen);
                 new Thread(connection).start();
             }
         } catch (IOException e) {

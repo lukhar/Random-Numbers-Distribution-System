@@ -4,7 +4,6 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.Random;
 
 import static org.fest.assertions.Assertions.assertThat;
 

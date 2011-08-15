@@ -10,7 +10,7 @@ do
     for i in `seq 1 20` 
     do
         echo $amount $i
-        java -jar "target/rndsClient-1.0-SNAPSHOT-jar-with-dependencies.jar" $ADDRESS $MB $amount >> $filename 
+        java -jar "target/rndsClient-1.0-SNAPSHOT-jar-with-dependencies.jar" $ADDRESS $MB $amount >> ../../Output\ Data/servlet\ implementation/$filename 
         wait
     done
 done

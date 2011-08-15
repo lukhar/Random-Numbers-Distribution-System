@@ -12,4 +12,19 @@
 		<servlet-name>Random Numbers Distributor</servlet-name>
 		<url-pattern>/GenerateRandomBits.do</url-pattern>
 	</servlet-mapping>
+
+    <servlet>
+        <servlet-name>Binary Random Numbers Distributor</servlet-name>
+        <servlet-class>rnds.distribution.BinaryRandomNumbersDistributor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Binary Random Numbers Distributor</servlet-name>
+            <url-pattern>/GenerateBinaryRandomBits.do</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>randomNumbersSource</param-name>
+        <param-value>/opt/RandomNumbersSource</param-value>
+    </context-param>
 </web-app>

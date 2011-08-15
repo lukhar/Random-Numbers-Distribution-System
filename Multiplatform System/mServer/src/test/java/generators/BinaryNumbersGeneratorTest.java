@@ -1,18 +1,23 @@
 package generators;
 
+import mserver.BinaryConnection;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
 
-import static junit.framework.Assert.*;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.fail;
+import static org.fest.assertions.Assertions.assertThat;
 
 /**
  * Created by IntelliJ IDEA.
  * User: lukash
- * Date: 7/3/11
- * Time: 9:54 PM
+ * Date: 8/15/11
+ * Time: 1:49 AM
+ * To change this template use File | Settings | File Templates.
  */
-public class FileNumbersGeneratorTest {
+public class BinaryNumbersGeneratorTest {
 
     private final static  String SOURCE = "resources/TestRandomNumbersSource";
 
@@ -22,12 +27,13 @@ public class FileNumbersGeneratorTest {
         int sequenceLength = 400;
 
         // when
-        String sequenceOne = new FileNumbersGenerator(SOURCE).generateSequence(sequenceLength);
-        String sequenceTwo = new FileNumbersGenerator(SOURCE).generateSequence(sequenceLength);
+        byte[] sequenceOne = new BinaryNumbersGenerator(SOURCE).generateSequence(sequenceLength);
+        byte[] sequenceTwo = new BinaryNumbersGenerator(SOURCE).generateSequence(sequenceLength);
 
         // then
         assertNotNull(sequenceOne);
-        assertEquals("Retrieved sequences should be equal", sequenceOne, sequenceTwo);
+        assertThat(sequenceOne).isEqualTo(sequenceTwo);
+
     }
 
     @Test
@@ -36,11 +42,11 @@ public class FileNumbersGeneratorTest {
         int expectedLength = 400;
 
         // when
-        String sequence = new FileNumbersGenerator(SOURCE).generateSequence(expectedLength);
+        byte[] sequence = new BinaryNumbersGenerator(SOURCE).generateSequence(expectedLength);
 
         // then
         assertNotNull(sequence);
-        assertEquals("sequence length differs from expected", expectedLength, sequence.length());
+        assertEquals("sequence length differs from expected", expectedLength, sequence.length);
     }
 
     @Test
@@ -50,7 +56,7 @@ public class FileNumbersGeneratorTest {
 
         // when
         try {
-            new FileNumbersGenerator(wrongSourcePath).generateSequence(10);
+            new BinaryNumbersGenerator(wrongSourcePath).generateSequence(10);
 
             // then
             fail("exception should have been thrown");
