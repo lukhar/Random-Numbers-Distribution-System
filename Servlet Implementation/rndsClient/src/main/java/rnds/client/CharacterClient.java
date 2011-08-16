@@ -16,7 +16,7 @@ public class CharacterClient implements Runnable {
     private int sequenceSize;
 
     public CharacterClient(String[] args) {
-        if (args.length < 2) {
+        if (args.length < 3) {
             System.out.println("Wrong number of parameters CharacterClient <servlet_address> <sequence_length> <packages_amount>");
             System.exit(-1);
         }
