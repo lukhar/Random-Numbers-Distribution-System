@@ -34,7 +34,7 @@ public class BinaryClient implements Runnable {
     }
 
     public static void main(String[] args) throws IOException {
-        new Thread(new Client(args)).start();
+        new Thread(new BinaryClient(args)).start();
     }
 
     public void run() {
