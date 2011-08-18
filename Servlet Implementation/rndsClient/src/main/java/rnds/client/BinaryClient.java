@@ -21,8 +21,8 @@ public class BinaryClient implements Runnable {
     private int sequenceSize;
 
     public BinaryClient(String[] args) {
-        if (args.length < 2) {
-            System.out.println("Wrong number of parameters CharacterClient <servlet_address> <sequence_length> <packages_amount>");
+        if (args.length < 3) {
+            System.out.println("Wrong number of parameters BinaryClient <servlet_address> <sequence_length> <packages_amount>");
             System.exit(-1);
         }
 

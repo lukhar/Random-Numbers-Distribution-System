@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>rnds.client.CharacterClient</mainClass>
+                            <mainClass>rnds.client.BinaryClient</mainClass>
                             <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>
