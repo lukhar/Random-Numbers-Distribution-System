@@ -19,7 +19,7 @@ public class BinaryConnection implements Runnable {
     private BinaryNumbersGenerator binaryNumbersGenerator;
 
     public BinaryConnection(Socket clientSocket, BinaryNumbersGenerator binaryNumbersGenerator) {
-        this.binaryNumbersGenerator = this.binaryNumbersGenerator;
+        this.binaryNumbersGenerator = binaryNumbersGenerator;
         try {
             inputReader = new BufferedReader(
                     new InputStreamReader(clientSocket.getInputStream()));
