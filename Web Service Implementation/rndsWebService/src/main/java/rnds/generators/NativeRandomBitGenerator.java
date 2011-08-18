@@ -1,19 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package rnds.generators;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
-/**
- *
- * @author lukash
- */
 public class NativeRandomBitGenerator implements RandomBitGenerator {
 
 	 private static final String DEFAULT_GENERATOR_PATH = "/dev/urandom";
@@ -34,5 +22,11 @@ public class NativeRandomBitGenerator implements RandomBitGenerator {
         } while (resultBuilder.length() < sequenceLength);
 
         return resultBuilder.substring(0, sequenceLength);
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        randomNumbersSource.close();
+        super.finalize();
     }
 }

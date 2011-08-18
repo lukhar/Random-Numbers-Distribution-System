@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package rnds.generators;
 
 import java.io.BufferedInputStream;
@@ -10,8 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *
- * @author lukash
+ * Created by IntelliJ IDEA.
+ * User: lukash
+ * Date: 8/6/11
+ * Time: 2:50 PM
  */
 public class FileRandomBitGenerator implements RandomBitGenerator {
     private final BufferedInputStream randomNumbersSource;
@@ -27,9 +25,15 @@ public class FileRandomBitGenerator implements RandomBitGenerator {
                 sequenceLength + Integer.SIZE);
 
         do {
-            resultBuilder.append(Integer.toBinaryString(randomNumbersSource.read()));
+            resultBuilder.append(randomNumbersSource.read());
         } while (resultBuilder.length() < sequenceLength);
 
         return resultBuilder.substring(0, sequenceLength);
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        randomNumbersSource.close();
+        super.finalize();
     }
 }
