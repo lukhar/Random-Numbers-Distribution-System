@@ -19,6 +19,8 @@ public class RandomNumbersServiceImpl implements RandomNumbersService {
         String output;
         RandomBitGenerator generator = new FileRandomBitGenerator("/opt/RandomNumbersSource");
         output = generator.generateSequence(sequenceSize);
+        System.out.println(output);
+        System.out.println(output.length());
 
         return output;
     }

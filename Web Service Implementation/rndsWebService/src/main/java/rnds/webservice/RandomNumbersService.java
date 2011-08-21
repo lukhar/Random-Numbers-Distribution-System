@@ -1,6 +1,7 @@
 package rnds.webservice;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 /**
@@ -13,5 +14,5 @@ import javax.jws.WebService;
 @WebService
 public interface RandomNumbersService {
     @WebMethod
-    String generateSequence(int sequenceSize) throws Throwable;
+    String generateSequence(@WebParam(name="sequenceSize")int sequenceSize) throws Throwable;
 }

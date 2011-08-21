@@ -42,10 +42,11 @@
                 </executions>
                 <configuration>
                     <wsdlUrls>
-                        <wsdlUrl>http://localhost:8080/WS/RandomNumbersService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://10.0.1.2:9080/WS/RandomNumbersService?wsdl</wsdlUrl>
                     </wsdlUrls>
                     <sourceDestDir>${project.build.directory}/generated</sourceDestDir>
                     <verbose>true</verbose>
+                    <sei/>
                 </configuration>
             </plugin>
             <plugin>
