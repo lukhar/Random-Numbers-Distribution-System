@@ -1,8 +1,7 @@
 package mserver;
 
-import generators.FileNumbersGenerator;
-import generators.NativeNumbersGenerator;
-import generators.RandomNumbersGenerator;
+import generators.FileRandomBitGenerator;
+import generators.RandomBitGenerator;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -18,7 +17,7 @@ public class Server extends Thread {
 
     ServerSocket serverSocket;
     private int portNumber;
-    private RandomNumbersGenerator generator = new FileNumbersGenerator("/opt/RandomNumbersSource");
+    private RandomBitGenerator generator = new FileRandomBitGenerator("/opt/RandomNumbersSource");
 
     public Server(int portNumber) throws IOException {
         this.portNumber = portNumber;

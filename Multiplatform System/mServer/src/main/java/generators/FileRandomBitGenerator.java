@@ -5,16 +5,15 @@ import java.io.*;
 /**
  * Created by IntelliJ IDEA.
  * User: lukash
- * Date: 5/8/11
- * Time: 6:01 PM
+ * Date: 7/3/11
+ * Time: 10:16 PM
  */
-public class NativeNumbersGenerator implements RandomNumbersGenerator {
-    private static final String DEFAULT_GENERATOR_PATH = "/dev/urandom";
-    private InputStream randomNumbersSource;
+public class FileRandomBitGenerator implements RandomBitGenerator {
+    private final BufferedInputStream randomNumbersSource;
 
-    public NativeNumbersGenerator() throws FileNotFoundException {
+    public FileRandomBitGenerator(final String source) throws FileNotFoundException {
         this.randomNumbersSource = new BufferedInputStream(
-                new FileInputStream(DEFAULT_GENERATOR_PATH));
+                new FileInputStream(source));
     }
 
     @Override

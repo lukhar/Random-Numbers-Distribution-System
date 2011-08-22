@@ -1,6 +1,6 @@
 package mserver;
 
-import generators.RandomNumbersGenerator;
+import generators.RandomBitGenerator;
 
 import java.io.*;
 import java.net.Socket;
@@ -15,10 +15,10 @@ import java.net.Socket;
 public class Connection implements Runnable {
     private BufferedOutputStream outputWriter;
     private BufferedReader inputReader;
-    private RandomNumbersGenerator binaryNumbersGenerator;
+    private RandomBitGenerator binaryBitGenerator;
 
-    public Connection(Socket clientSocket, RandomNumbersGenerator randomNumbersGenerator) {
-        this.binaryNumbersGenerator = randomNumbersGenerator;
+    public Connection(Socket clientSocket, RandomBitGenerator randomBitGenerator) {
+        this.binaryBitGenerator = randomBitGenerator;
         try {
             inputReader = new BufferedReader(
                     new InputStreamReader(clientSocket.getInputStream()));
@@ -38,7 +38,7 @@ public class Connection implements Runnable {
 
             byte[] outputData;
             for (int i = 0; i < packagesAmount; ++i) {
-                outputData = binaryNumbersGenerator.generateSequence(sequenceSize).getBytes();
+                outputData = binaryBitGenerator.generateSequence(sequenceSize).getBytes();
                 outputWriter.write(outputData, 0, sequenceSize);
             }
             outputWriter.close();

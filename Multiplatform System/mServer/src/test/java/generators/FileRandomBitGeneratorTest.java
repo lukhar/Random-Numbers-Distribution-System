@@ -12,7 +12,7 @@ import static junit.framework.Assert.*;
  * Date: 7/3/11
  * Time: 9:54 PM
  */
-public class FileNumbersGeneratorTest {
+public class FileRandomBitGeneratorTest {
 
     private final static  String SOURCE = "resources/TestRandomNumbersSource";
 
@@ -22,8 +22,8 @@ public class FileNumbersGeneratorTest {
         int sequenceLength = 400;
 
         // when
-        String sequenceOne = new FileNumbersGenerator(SOURCE).generateSequence(sequenceLength);
-        String sequenceTwo = new FileNumbersGenerator(SOURCE).generateSequence(sequenceLength);
+        String sequenceOne = new FileRandomBitGenerator(SOURCE).generateSequence(sequenceLength);
+        String sequenceTwo = new FileRandomBitGenerator(SOURCE).generateSequence(sequenceLength);
 
         // then
         assertNotNull(sequenceOne);
@@ -36,7 +36,7 @@ public class FileNumbersGeneratorTest {
         int expectedLength = 400;
 
         // when
-        String sequence = new FileNumbersGenerator(SOURCE).generateSequence(expectedLength);
+        String sequence = new FileRandomBitGenerator(SOURCE).generateSequence(expectedLength);
 
         // then
         assertNotNull(sequence);
@@ -50,7 +50,7 @@ public class FileNumbersGeneratorTest {
 
         // when
         try {
-            new FileNumbersGenerator(wrongSourcePath).generateSequence(10);
+            new FileRandomBitGenerator(wrongSourcePath).generateSequence(10);
 
             // then
             fail("exception should have been thrown");

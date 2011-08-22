@@ -8,12 +8,12 @@ import java.io.*;
  * Date: 8/9/11
  * Time: 7:35 PM
  */
-public class MemoryNumbersGenerator implements RandomNumbersGenerator {
+public class MemoryRandomBitGenerator implements RandomBitGenerator {
 
     private char[] numbersSource;
     private static int MB = 8000000 / Character.SIZE;
 
-    public MemoryNumbersGenerator(final String sourceFile, int memoryAllocationSize) throws IOException {
+    public MemoryRandomBitGenerator(final String sourceFile, int memoryAllocationSize) throws IOException {
         numbersSource = new char[memoryAllocationSize * MB];
         BufferedReader reader = new BufferedReader(
                 new FileReader(sourceFile));

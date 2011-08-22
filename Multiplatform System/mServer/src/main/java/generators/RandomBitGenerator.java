@@ -9,7 +9,7 @@ import java.io.IOException;
  * Date: 5/8/11
  * Time: 6:03 PM
  */
-public interface RandomNumbersGenerator {
+public interface RandomBitGenerator {
 
     public String generateSequence(int sequenceLength) throws IOException;
 }

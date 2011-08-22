@@ -13,17 +13,17 @@ import static org.fest.assertions.Assertions.assertThat;
  * Date: 5/8/11
  * Time: 6:09 PM
  */
-public class NativeNumbersGeneratorTest extends TestCase {
+public class NativeRandomBitGeneratorTest extends TestCase {
 
     @Test
     public void testShouldGenerateRandomSequence() throws IOException {
         // given
-        NativeNumbersGenerator nativeNumbersGenerator = new NativeNumbersGenerator();
+        NativeRandomBitGenerator nativeRandomBitGenerator = new NativeRandomBitGenerator();
         int sequenceLength = 12;
 
         // when
-        String sequenceOne = nativeNumbersGenerator.generateSequence(sequenceLength);
-        String sequenceTwo = nativeNumbersGenerator.generateSequence(sequenceLength);
+        String sequenceOne = nativeRandomBitGenerator.generateSequence(sequenceLength);
+        String sequenceTwo = nativeRandomBitGenerator.generateSequence(sequenceLength);
 
         // then
         assertThat(sequenceOne).isNotEqualTo(sequenceTwo);
@@ -33,10 +33,10 @@ public class NativeNumbersGeneratorTest extends TestCase {
     public void testShouldGenerateSequenceWithGivenLength() throws IOException {
         // given
         int sequenceLength = 1023;
-        NativeNumbersGenerator nativeNumbersGenerator = new NativeNumbersGenerator();
+        NativeRandomBitGenerator nativeRandomBitGenerator = new NativeRandomBitGenerator();
 
         // when
-        String sequence = nativeNumbersGenerator.generateSequence(sequenceLength);
+        String sequence = nativeRandomBitGenerator.generateSequence(sequenceLength);
 
         // then
         assertThat(sequence).isNotNull().hasSize(sequenceLength);

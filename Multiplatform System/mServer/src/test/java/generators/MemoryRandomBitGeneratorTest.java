@@ -1,6 +1,5 @@
 package generators;
 
-import com.sun.xml.internal.messaging.saaj.util.CharReader;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
@@ -15,7 +14,7 @@ import static junit.framework.Assert.fail;
  * Date: 8/9/11
  * Time: 8:01 PM
  */
-public class MemoryNumbersGeneratorTest {
+public class MemoryRandomBitGeneratorTest {
     private final static  String SOURCE = "resources/TestRandomNumbersSource";
 
     @Test
@@ -25,8 +24,8 @@ public class MemoryNumbersGeneratorTest {
         int allocationSize = 4;
 
         // when
-        String sequenceOne = new MemoryNumbersGenerator(SOURCE, allocationSize).generateSequence(sequenceLength);
-        String sequenceTwo = new MemoryNumbersGenerator(SOURCE, allocationSize).generateSequence(sequenceLength);
+        String sequenceOne = new MemoryRandomBitGenerator(SOURCE, allocationSize).generateSequence(sequenceLength);
+        String sequenceTwo = new MemoryRandomBitGenerator(SOURCE, allocationSize).generateSequence(sequenceLength);
 
         // then
         assertNotNull(sequenceOne);
@@ -42,7 +41,7 @@ public class MemoryNumbersGeneratorTest {
         int allocationSize = 4;
 
         // when
-        String sequence = new MemoryNumbersGenerator(SOURCE, allocationSize).generateSequence(sequenceLength);
+        String sequence = new MemoryRandomBitGenerator(SOURCE, allocationSize).generateSequence(sequenceLength);
 
         // then
         assertNotNull(sequence);
@@ -56,7 +55,7 @@ public class MemoryNumbersGeneratorTest {
 
         // when
         try {
-            new MemoryNumbersGenerator(wrongSourcePath, 1).generateSequence(10);
+            new MemoryRandomBitGenerator(wrongSourcePath, 1).generateSequence(10);
 
             // then
             fail("exception should have been thrown");
