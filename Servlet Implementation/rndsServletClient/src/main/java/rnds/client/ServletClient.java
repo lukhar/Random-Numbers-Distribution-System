@@ -1,35 +1,40 @@
 package rnds.client;
 
-import java.io.BufferedReader;
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class CharacterClient implements Runnable {
-
+/**
+ * Created by IntelliJ IDEA.
+ * User: lukash
+ * Date: 8/14/11
+ * Time: 11:28 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public class ServletClient implements Runnable {
     private String servletAddress;
     private int sequenceLength;
     private int packagesAmount;
     private int sequenceSize;
 
-    public CharacterClient(String[] args) {
+    public ServletClient(String[] args) {
         if (args.length < 3) {
-            System.out.println("Wrong number of parameters CharacterClient <servlet_address> <sequence_length> <packages_amount>");
+            System.out.println("Wrong number of parameters ServletClient <servlet_address> <sequence_length> <packages_amount>");
             System.exit(-1);
         }
 
         this.servletAddress = args[0];
         this.sequenceLength = Integer.valueOf(args[1]);
         this.packagesAmount = Integer.valueOf(args[2]);
-        this.sequenceSize = (sequenceLength % Character.SIZE == 0) ?
-                (sequenceLength / Character.SIZE) : (sequenceLength / Character.SIZE + 1);
+        this.sequenceSize = (sequenceLength % Byte.SIZE == 0) ?
+                (sequenceLength / Byte.SIZE) : (sequenceLength / Byte.SIZE +1);
     }
 
     public static void main(String[] args) {
-        new Thread(new CharacterClient(args)).start();
+        new Thread(new ServletClient(args)).start();
     }
 
     public void run() {
@@ -42,7 +47,7 @@ public class CharacterClient implements Runnable {
             connection.setDoInput(true);
             connection.setUseCaches(false);
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Type", "application/octet-stream");
 
             long startTime = System.nanoTime();
             connection.connect();
@@ -50,18 +55,17 @@ public class CharacterClient implements Runnable {
 
             startTime = System.nanoTime();
 
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
-            InputStream inputStream = connection.getInputStream();
+            InputStream stream = new BufferedInputStream(connection.getInputStream());
 
-            char[] buf = new char[sequenceSize];
-            while(reader.read(buf, 0, sequenceSize) != -1) {
-                System.out.println(buf);
+            byte[] buf = new byte[sequenceSize];
+            while(stream.read(buf, 0, sequenceSize) != -1) {
+//                print(buf);
             }
+
             long dataTransferTime = System.nanoTime() - startTime;
 
             startTime = System.nanoTime();
-            inputStream.close();
+            stream.close();
             connection.disconnect();
             long connectionCloseTime = System.nanoTime() - startTime;
 
@@ -80,9 +84,16 @@ public class CharacterClient implements Runnable {
         }
     }
 
+    private void print(byte[] buf) {
+        for(byte b : buf) {
+            System.out.print(b);
+        }
+    }
+
     private double convertToSeconds(long elapsedTime) {
         double numberOfNanosecondsInSecond = 1000000000.0;
 
         return elapsedTime / numberOfNanosecondsInSecond;
     }
+
 }

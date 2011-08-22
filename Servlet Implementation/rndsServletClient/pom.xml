@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>rnds.client.BinaryClient</mainClass>
+                            <mainClass>rnds.client.ServletClient</mainClass>
                             <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>

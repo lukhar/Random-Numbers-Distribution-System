@@ -1,6 +1,7 @@
 package rnds.distribution;
 
-import rnds.generator.model.BinaryRandomBitGenerator;
+import rnds.generator.model.FileRandomBitGenerator;
+import rnds.generator.model.RandomBitGenerator;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -32,10 +33,10 @@ public class BinaryRandomNumbersDistributor extends HttpServlet {
             int sequenceSize = Integer.valueOf(req.getParameter("sequenceSize"));
             int packagesAmount = Integer.valueOf(req.getParameter("packagesAmount"));
 
-            BinaryRandomBitGenerator randomBitGenerator = new BinaryRandomBitGenerator(source);
+            RandomBitGenerator randomBitGenerator = new FileRandomBitGenerator(source);
 
             for (int i = 0; i < packagesAmount; ++i) {
-                output = randomBitGenerator.generateSequence(sequenceSize);
+                output = randomBitGenerator.generateSequence(sequenceSize).getBytes();
                 out.write(output);
             }
 

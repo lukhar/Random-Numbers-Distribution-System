@@ -18,8 +18,7 @@ public class Server extends Thread {
 
     ServerSocket serverSocket;
     private int portNumber;
-//    private RandomNumbersGenerator generator = new FileNumbersGenerator("/opt/RandomNumbersSource");
-    private RandomNumbersGenerator generator = new NativeNumbersGenerator();
+    private RandomNumbersGenerator generator = new FileNumbersGenerator("/opt/RandomNumbersSource");
 
     public Server(int portNumber) throws IOException {
         this.portNumber = portNumber;
