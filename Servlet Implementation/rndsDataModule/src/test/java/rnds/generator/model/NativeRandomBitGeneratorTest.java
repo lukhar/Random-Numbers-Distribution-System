@@ -9,7 +9,7 @@ import static org.fest.assertions.Assertions.assertThat;
 
 public class NativeRandomBitGeneratorTest extends RandomBitGeneratorTest {
 
-     @Test
+    @Test
     public void testShouldGenerateRandomSequence() throws IOException {
         // given
         NativeRandomBitGenerator nativeNumbersGenerator = new NativeRandomBitGenerator();

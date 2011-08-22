@@ -4,7 +4,7 @@ import java.io.*;
 
 public class NativeRandomBitGenerator implements RandomBitGenerator {
 
-	 private static final String DEFAULT_GENERATOR_PATH = "/dev/urandom";
+    private static final String DEFAULT_GENERATOR_PATH = "/dev/urandom";
     private InputStream randomNumbersSource;
 
     public NativeRandomBitGenerator() throws FileNotFoundException {

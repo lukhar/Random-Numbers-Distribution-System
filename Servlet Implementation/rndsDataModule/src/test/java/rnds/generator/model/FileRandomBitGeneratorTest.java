@@ -12,7 +12,7 @@ import static junit.framework.Assert.*;
  * Date: 8/6/11
  * Time: 2:51 PM
  */
-public class FileRandomBitGeneratorTest extends RandomBitGeneratorTest{
+public class FileRandomBitGeneratorTest extends RandomBitGeneratorTest {
 
     @Test
     public void testShouldReturnNumbersFromGivenSource() throws Exception {

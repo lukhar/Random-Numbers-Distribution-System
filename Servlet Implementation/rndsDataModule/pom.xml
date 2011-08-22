@@ -1,33 +1,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>rnds</groupId>
-    <artifactId>rndsSystem</artifactId>
+    <parent>
+        <groupId>rnds</groupId>
+        <artifactId>rndsSystem</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../rndsSystem/pom.xml</relativePath>
+    </parent>
+
+    <groupId>rnds.generator.model</groupId>
+    <artifactId>rndsDataModule</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>../rndsSystem/pom.xml</relativePath>
-  </parent>
+    <packaging>jar</packaging>
 
-  <groupId>rnds.generator.model</groupId>
-  <artifactId>rndsDataModule</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <name>rndsDataModule</name>
+    <url>http://maven.apache.org</url>
 
-  <name>rndsDataModule</name>
-  <url>http://maven.apache.org</url>
-
-  <build>
-    <plugins>  
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
