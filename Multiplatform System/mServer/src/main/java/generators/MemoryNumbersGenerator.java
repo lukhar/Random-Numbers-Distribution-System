@@ -10,7 +10,6 @@ import java.io.*;
  */
 public class MemoryNumbersGenerator implements RandomNumbersGenerator {
 
-
     private char[] numbersSource;
     private static int MB = 8000000 / Character.SIZE;
 

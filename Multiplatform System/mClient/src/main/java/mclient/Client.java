@@ -7,11 +7,10 @@ import java.net.Socket;
 /**
  * Created by IntelliJ IDEA.
  * User: lukash
- * Date: 5/8/11
- * Time: 10:13 PM
+ * Date: 8/15/11
+ * Time: 2:00 AM
  */
 public class Client implements Runnable {
-
     private Socket socket;
     private int sequenceLength;
     private String serverAddress;
@@ -30,8 +29,8 @@ public class Client implements Runnable {
         this.portNumber = Integer.parseInt(args[1]);
         this.sequenceLength = Integer.valueOf(args[2]);
         this.packagesAmount = Integer.valueOf(args[3]);
-        this.sequenceSize = (sequenceLength % Character.SIZE == 0) ?
-                (sequenceLength / Character.SIZE) : (sequenceLength / Character.SIZE + 1);
+        this.sequenceSize = (sequenceLength % Byte.SIZE == 0) ?
+                (sequenceLength / Byte.SIZE) : (sequenceLength / Byte.SIZE + 1);
     }
 
     public static void main(String[] args) throws IOException {
@@ -47,8 +46,7 @@ public class Client implements Runnable {
             startTime = System.nanoTime();
             BufferedWriter socketWriter = new BufferedWriter(
                     new OutputStreamWriter(socket.getOutputStream()));
-            BufferedReader socketReader = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
+            BufferedInputStream inputStream = new BufferedInputStream(socket.getInputStream());
 
             socketWriter.write(String.valueOf(sequenceSize));
             socketWriter.newLine();
@@ -58,13 +56,13 @@ public class Client implements Runnable {
             socketWriter.newLine();
             socketWriter.flush();
 
-            char[] buf = new char[sequenceSize];
-            while(socketReader.read(buf, 0, sequenceSize) != -1);
+            byte[] buf = new byte[sequenceSize];
+            while(inputStream.read(buf, 0, sequenceSize) != -1);
 
             long dataTransferTime = System.nanoTime() - startTime;
 
             startTime = System.nanoTime();
-            socketReader.close();
+            inputStream.close();
             socketWriter.close();
             socket.close();
             long connectionCloseTime = System.nanoTime() - startTime;
@@ -85,4 +83,5 @@ public class Client implements Runnable {
 
         return elapsedTime / numberOfNanosecondsInSecond;
     }
+
 }

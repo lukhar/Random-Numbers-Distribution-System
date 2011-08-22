@@ -8,21 +8,21 @@ import java.net.Socket;
 /**
  * Created by IntelliJ IDEA.
  * User: lukash
- * Date: 5/8/11
- * Time: 9:27 PM
+ * Date: 8/15/11
+ * Time: 1:46 AM
+ * To change this template use File | Settings | File Templates.
  */
 public class Connection implements Runnable {
-    private BufferedWriter outputWriter;
+    private BufferedOutputStream outputWriter;
     private BufferedReader inputReader;
-    private RandomNumbersGenerator randomNumbersGenerator;
+    private RandomNumbersGenerator binaryNumbersGenerator;
 
     public Connection(Socket clientSocket, RandomNumbersGenerator randomNumbersGenerator) {
-        this.randomNumbersGenerator = randomNumbersGenerator;
+        this.binaryNumbersGenerator = randomNumbersGenerator;
         try {
             inputReader = new BufferedReader(
                     new InputStreamReader(clientSocket.getInputStream()));
-            outputWriter = new BufferedWriter(
-                    new OutputStreamWriter(clientSocket.getOutputStream()));
+            outputWriter = new BufferedOutputStream(clientSocket.getOutputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,9 +36,10 @@ public class Connection implements Runnable {
 
             System.out.println("sequence length : " + sequenceSize + " packages amount : " + packagesAmount);
 
+            byte[] outputData;
             for (int i = 0; i < packagesAmount; ++i) {
-                outputWriter.write(randomNumbersGenerator
-                        .generateSequence(sequenceSize));
+                outputData = binaryNumbersGenerator.generateSequence(sequenceSize).getBytes();
+                outputWriter.write(outputData, 0, sequenceSize);
             }
             outputWriter.close();
 

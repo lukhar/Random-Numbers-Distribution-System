@@ -32,7 +32,7 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <mainClass>mclient.BinaryClient</mainClass>
+                                <mainClass>mclient.Client</mainClass>
                                 <addClasspath>true</addClasspath>
                             </manifest>
                         </archive>
