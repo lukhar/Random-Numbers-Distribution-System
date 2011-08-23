@@ -3,6 +3,7 @@ package rnds.webservice;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,5 +15,5 @@ import javax.jws.WebService;
 @WebService
 public interface RandomNumbersService {
     @WebMethod
-    String generateSequence(@WebParam(name="sequenceSize")int sequenceSize) throws Throwable;
+    String generateSequence(@WebParam int sequenceSize) throws Throwable;
 }

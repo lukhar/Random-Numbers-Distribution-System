@@ -4,6 +4,7 @@ import rnds.generators.FileRandomBitGenerator;
 import rnds.generators.RandomBitGenerator;
 
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 import java.io.IOException;
 
 /**
@@ -19,8 +20,6 @@ public class RandomNumbersServiceImpl implements RandomNumbersService {
         String output;
         RandomBitGenerator generator = new FileRandomBitGenerator("/opt/RandomNumbersSource");
         output = generator.generateSequence(sequenceSize);
-        System.out.println(output);
-        System.out.println(output.length());
 
         return output;
     }

@@ -26,20 +26,20 @@ import java.net.URLConnection;
  * Time: 11:15 PM
  */
 public class ServiceClient {
-    /* public static void main(String[] args) {
+/*     public static void main(String[] args) {
         long startTime = System.nanoTime();
         RandomNumbersServiceImplService serviceImpl = new RandomNumbersServiceImplService();
         long connectionEstablishTime = System.nanoTime() - startTime;
         System.out.println(convertToSeconds(connectionEstablishTime));
         RandomNumbersService service = serviceImpl.getRandomNumbersServiceImplPort();
         System.out.println(service.generateSequence(Integer.parseInt(args[0])));
-    }
+    }*/
 
     private static double convertToSeconds(long elapsedTime) {
         double numberOfNanosecondsInSecond = 1000000000.0;
 
         return elapsedTime / numberOfNanosecondsInSecond;
-    }*/
+    }
 
     public static void main(String[] args) {
         ServiceClient client = new ServiceClient();
@@ -50,6 +50,7 @@ public class ServiceClient {
             e.printStackTrace();
         }
     }
+
     public String generateSequence(int sequenceSize) throws MalformedURLException,
             IOException {
 
@@ -61,22 +62,23 @@ public class ServiceClient {
         URLConnection connection = url.openConnection();
         HttpURLConnection httpConn = (HttpURLConnection) connection;
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
+
         String xmlInput =
-                "  <soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:web=\"http://litwinconsulting.com/webservices/\">\n" +
-                        "   <soapenv:Header/>\n" +
-                        "   <soapenv:Body>\n" +
-                        "      <web:generateSequence>\n" +
-                        "         <web:sequenceSize>" + sequenceSize + "</web:sequenceSize>\n" +
-                        "      </web:generateSequence>\n" +
-                        "   </soapenv:Body>\n" +
-                        "  </soapenv:Envelope>";
+                "   <soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
+                "       <soap:Body>\n" +
+                "           <m:generateSequence xmlns:m=\"http://webservice.rnds/\">\n" +
+                "               <arg0>" + sequenceSize + "</arg0>\n" +
+                "           </m:generateSequence>\n" +
+                "       </soap:Body>\n" +
+                "   </soap:Envelope>";
+        System.out.println(xmlInput);
 
         byte[] buffer;
         buffer = xmlInput.getBytes();
         bout.write(buffer);
         byte[] b = bout.toByteArray();
         String SOAPAction =
-                "http://litwinconsulting.com/webservices/GetWeather";
+                "\"http://webservice.rnds/RandomNumbersService/generateSequenceRequest\"";
         // Set the appropriate HTTP parameters.
         httpConn.setRequestProperty("Content-Length",
                 String.valueOf(b.length));
@@ -103,13 +105,13 @@ public class ServiceClient {
         //Parse the String output to a org.w3c.dom.Document and be able to reach every node with the org.w3c.dom API.
         Document document = parseXmlFile(outputString);
         NodeList nodeLst = document.getElementsByTagName("return");
-        String weatherResult = nodeLst.item(0).getTextContent();
-        System.out.println("Sequence : " + weatherResult);
+        String sequence = nodeLst.item(0).getTextContent();
+        System.out.println("Sequence : " + sequence);
 
         //Write the SOAP message formatted to the console.
         String formattedSOAPResponse = formatXML(outputString);
         System.out.println(formattedSOAPResponse);
-        return weatherResult;
+        return sequence;
     }
 
     //format the XML in your String
