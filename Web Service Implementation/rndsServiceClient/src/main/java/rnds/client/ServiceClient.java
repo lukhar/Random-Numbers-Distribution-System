@@ -45,7 +45,13 @@ public class ServiceClient {
         ServiceClient client = new ServiceClient();
 
         try {
-            client.generateSequence(Integer.parseInt(args[0]));
+            int sequenceLength = Integer.parseInt(args[0]);
+            int packagesAmount = Integer.parseInt(args[1]);
+            int sequenceSize = (sequenceLength % Byte.SIZE == 0) ?
+                (sequenceLength / Byte.SIZE) : (sequenceLength / Byte.SIZE + 1);
+
+
+            client.generateSequence(sequenceLength);
         } catch (IOException e) {
             e.printStackTrace();
         }
