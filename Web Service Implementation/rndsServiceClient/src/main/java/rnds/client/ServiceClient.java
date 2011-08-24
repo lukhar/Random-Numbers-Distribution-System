@@ -45,7 +45,7 @@ public class ServiceClient {
         ServiceClient client = new ServiceClient();
 
         try {
-            client.generateSequence(50000);
+            client.generateSequence(Integer.parseInt(args[0]));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,21 +57,26 @@ public class ServiceClient {
         //Code to make a webservice HTTP request
         String responseString = "";
         String outputString = "";
+
+        long startTime = System.nanoTime();
         String wsURL = "http://10.0.1.2:9080/WS/RandomNumbersService";
         URL url = new URL(wsURL);
         URLConnection connection = url.openConnection();
+        long connectionEstablishTime = System.nanoTime() - startTime;
+
+        startTime = System.nanoTime();
         HttpURLConnection httpConn = (HttpURLConnection) connection;
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
 
         String xmlInput =
                 "   <soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
-                "       <soap:Body>\n" +
-                "           <m:generateSequence xmlns:m=\"http://webservice.rnds/\">\n" +
-                "               <arg0>" + sequenceSize + "</arg0>\n" +
-                "           </m:generateSequence>\n" +
-                "       </soap:Body>\n" +
-                "   </soap:Envelope>";
-        System.out.println(xmlInput);
+                        "       <soap:Body>\n" +
+                        "           <m:generateSequence xmlns:m=\"http://webservice.rnds/\">\n" +
+                        "               <arg0>" + sequenceSize + "</arg0>\n" +
+                        "           </m:generateSequence>\n" +
+                        "       </soap:Body>\n" +
+                        "   </soap:Envelope>";
+//        System.out.println(xmlInput);
 
         byte[] buffer;
         buffer = xmlInput.getBytes();
@@ -100,18 +105,31 @@ public class ServiceClient {
 
         //Write the SOAP message response to a String.
         while ((responseString = in.readLine()) != null) {
-            outputString = outputString + responseString;
+            //    outputString = outputString + responseString;
         }
+        long dataTransferTime = System.nanoTime() - startTime;
+
+        startTime = System.nanoTime();
+        ((HttpURLConnection) connection).disconnect();
+        long connectionCloseTime = System.nanoTime() - startTime;
         //Parse the String output to a org.w3c.dom.Document and be able to reach every node with the org.w3c.dom API.
-        Document document = parseXmlFile(outputString);
+        /*Document document = parseXmlFile(outputString);
         NodeList nodeLst = document.getElementsByTagName("return");
         String sequence = nodeLst.item(0).getTextContent();
         System.out.println("Sequence : " + sequence);
 
+
+
         //Write the SOAP message formatted to the console.
         String formattedSOAPResponse = formatXML(outputString);
-        System.out.println(formattedSOAPResponse);
-        return sequence;
+        System.out.println(formattedSOAPResponse);*/
+
+        System.out.printf("%d %4.6f %4.6f %4.6f\n",
+                sequenceSize,
+                convertToSeconds(connectionEstablishTime),
+                convertToSeconds(dataTransferTime),
+                convertToSeconds(connectionCloseTime));
+        return null;
     }
 
     //format the XML in your String
