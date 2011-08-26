@@ -45,8 +45,7 @@ public class ServiceClient {
             int sequenceSize = (sequenceLength % Byte.SIZE == 0) ?
                 (sequenceLength / Byte.SIZE) : (sequenceLength / Byte.SIZE + 1);
 
-                client.generateSequence(sequenceLength);
-
+            client.generateSequence(sequenceSize * packagesAmount);
         } catch (IOException e) {
             e.printStackTrace();
         }
