@@ -3,11 +3,8 @@ package rnds.client;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import rnds.webservice.RandomNumbersService;
-import rnds.webservice.RandomNumbersServiceImplService;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -51,7 +48,7 @@ public class ServiceClient {
                 (sequenceLength / Byte.SIZE) : (sequenceLength / Byte.SIZE + 1);
 
 
-            client.generateSequence(sequenceLength);
+            client.generateSequence(sequenceSize * packagesAmount);
         } catch (IOException e) {
             e.printStackTrace();
         }
