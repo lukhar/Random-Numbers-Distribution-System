@@ -1,4 +1,4 @@
-package rnds.client;
+package rnds.servicetester;
 
 import java.io.*;
 import java.net.HttpURLConnection;
