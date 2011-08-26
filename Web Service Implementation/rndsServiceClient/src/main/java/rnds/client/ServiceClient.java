@@ -1,8 +1,9 @@
 package rnds.client;
 
 import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import org.w3c.dom.NodeList;
+import rnds.webservice.RandomNumbersService;
+import rnds.webservice.RandomNumbersServiceImplService;
 
 import java.io.*;
 import java.net.HttpURLConnection;
