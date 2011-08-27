@@ -71,7 +71,7 @@ public class ServletClient implements Runnable {
 
 
 
-            System.out.printf("\n%d %4.6f %4.6f %4.6f\n",
+            System.out.printf("%d %4.6f %4.6f %4.6f\n",
                     sequenceSize * packagesAmount,
                     convertToSeconds(connectionEstablishTime),
                     convertToSeconds(dataTransferTime),
