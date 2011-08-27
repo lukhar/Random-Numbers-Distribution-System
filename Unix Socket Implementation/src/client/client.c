@@ -4,7 +4,7 @@ const int default_protocol = 0;
 
 int main(int argc, char **argv)
 {
-    struct sockaddr_in client_address;
+    struct sockaddr_in server_address;
     int socket_fd;
     char* ip_adress = NULL;
     int port;
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     int8_t* random_bit_sequence;
 
     if (argc < 4) {
-        printf("wrong number of paramenters : client <ip_adrress> <port> <sequence_length>\n");
+        printf("wrong number of paramenters : client <ip_adrress> <port> <sequence_length> [<packages_amount>]\n");
         exit(EXIT_FAILURE);
     }
 
@@ -34,11 +34,11 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    bzero(&client_address, sizeof(client_address));
-    client_address.sin_family = AF_INET;
-    client_address.sin_port = htons(port);
+    bzero(&server_address, sizeof(server_address));
+    server_address.sin_family = AF_INET;
+    server_address.sin_port = htons(port);
 
-    if (inet_pton(AF_INET, ip_adress, &client_address.sin_addr)<= 0)
+    if (inet_pton(AF_INET, ip_adress, &server_address.sin_addr)<= 0)
     {
         perror("client inet_pton()");
         exit(EXIT_FAILURE);
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 
     struct timeval starttime, endtime, connection_open_time, data_transfer_time, connection_close_time;
     gettimeofday(&starttime, 0x0);
-    if (connect(socket_fd, (struct sockaddr*) &client_address, sizeof(client_address)) < 0)
+    if (connect(socket_fd, (struct sockaddr*) &server_address, sizeof(server_address)) < 0)
     {
         perror("client connect()");
         exit(EXIT_FAILURE);

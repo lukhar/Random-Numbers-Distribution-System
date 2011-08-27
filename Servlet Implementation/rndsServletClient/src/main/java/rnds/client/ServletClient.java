@@ -39,6 +39,7 @@ public class ServletClient implements Runnable {
 
     public void run() {
         try {
+            long startTime = System.nanoTime();
             URL url = new URL(servletAddress + "?" + "sequenceSize="
                     + sequenceSize + "&" + "packagesAmount=" + packagesAmount);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -49,7 +50,6 @@ public class ServletClient implements Runnable {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/octet-stream");
 
-            long startTime = System.nanoTime();
             connection.connect();
             long connectionEstablishTime = System.nanoTime() - startTime;
 

@@ -68,7 +68,7 @@ public class Client implements Runnable {
             long connectionCloseTime = System.nanoTime() - startTime;
 
             System.out.printf("%d %4.6f %4.6f %4.6f\n",
-                    sequenceSize * packagesAmount * 2,
+                    sequenceSize * packagesAmount,
                     convertToSeconds(connectionEstablishTime),
                     convertToSeconds(dataTransferTime),
                     convertToSeconds(connectionCloseTime));
