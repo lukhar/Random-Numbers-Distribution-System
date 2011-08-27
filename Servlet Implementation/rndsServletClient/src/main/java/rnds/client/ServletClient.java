@@ -49,9 +49,8 @@ public class ServletClient implements Runnable {
             connection.setUseCaches(false);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/octet-stream");
-
-            connection.connect();
             long connectionEstablishTime = System.nanoTime() - startTime;
+//            System.out.println(connection.);
 
             startTime = System.nanoTime();
 
@@ -59,7 +58,7 @@ public class ServletClient implements Runnable {
 
             byte[] buf = new byte[sequenceSize];
             while(stream.read(buf, 0, sequenceSize) != -1) {
-//                print(buf);
+//               print(buf);
             }
 
             long dataTransferTime = System.nanoTime() - startTime;
