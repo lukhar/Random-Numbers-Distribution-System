@@ -49,9 +49,8 @@ public class ServletClient implements Runnable {
             connection.setUseCaches(false);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/octet-stream");
-
-            connection.connect();
             long connectionEstablishTime = System.nanoTime() - startTime;
+
 
             startTime = System.nanoTime();
 
