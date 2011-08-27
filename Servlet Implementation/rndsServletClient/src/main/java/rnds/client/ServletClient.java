@@ -52,6 +52,7 @@ public class ServletClient implements Runnable {
             long connectionEstablishTime = System.nanoTime() - startTime;
 //            System.out.println(connection.);
 
+
             startTime = System.nanoTime();
 
             InputStream stream = new BufferedInputStream(connection.getInputStream());
