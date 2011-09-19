@@ -17,14 +17,21 @@ public class Server extends Thread {
 
     ServerSocket serverSocket;
     private int portNumber;
-    private RandomBitGenerator generator = new FileRandomBitGenerator("/opt/RandomNumbersSource");
+    private RandomBitGenerator generator;
 
     public Server(int portNumber) throws IOException {
         this.portNumber = portNumber;
+        this.generator= new FileRandomBitGenerator("/opt/RandomNumbersSource");
 
         serverSocket = new ServerSocket(portNumber);
         System.out.println("Server started on port " + portNumber);
         this.start();
+    }
+
+    public Server(ServerSocket serverSocket, int portNumber, RandomBitGenerator generator) {
+        this.serverSocket = serverSocket;
+        this.portNumber = portNumber;
+        this.generator = generator;
     }
 
     @Override
