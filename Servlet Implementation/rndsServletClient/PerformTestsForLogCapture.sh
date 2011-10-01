@@ -17,7 +17,7 @@ for amount in `seq 50 50 500`
 do
     log="log${amount}MB"
     filename="output${amount}MB"
-    path="../../Tshark\ Logs/webservice"
+    path="../../Tshark\ Logs/servlet\ implementation/"
     for i in `seq 1 20`
     do
         eval ${DUMP} &
@@ -25,11 +25,11 @@ do
         sleep 2
 
         echo start client
-        java -jar "target/rndsServiceTester-1.0-SNAPSHOT-jar-with-dependencies.jar" $ADDRESS $MB $amount  >> ../../Output\ Data/webservice/$filename &
+        java -jar "target/rndsServletClient-1.0-SNAPSHOT-jar-with-dependencies.jar" $ADDRESS $MB $amount >> ../../Output\ Data/servlet\ implementation/$filename &
         echo client pid : $!
         wait $!
         echo wait for closing socket
-        sleep 2
+        sleep 5
         
         sudo pkill tcpdump
         echo clean after dump
@@ -37,7 +37,7 @@ do
 
         echo start filtering
         echo $FILTER 
-        eval ${FILTER} >> ../../Tshark\ Logs/webservice/$log &
+        eval ${FILTER} >> ../../Tshark\ Logs/servlet\ implementation/$log &
         echo filter pid : $!
         wait $!
 

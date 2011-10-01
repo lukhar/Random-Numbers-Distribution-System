@@ -1,86 +1,240 @@
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 56074 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=658063 TSER=0 WS=6
-  2   0.000276     10.0.1.2 -> 10.0.1.3     TCP http-alt > 56074 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=690010 TSER=658063 WS=6
-  3   0.000297     10.0.1.3 -> 10.0.1.2     TCP 56074 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=658063 TSER=690010
-102932   8.567282     10.0.1.3 -> 10.0.1.2     TCP 56074 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=660205 TSER=692092
-102933   8.567610     10.0.1.2 -> 10.0.1.3     TCP http-alt > 56074 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=692152 TSER=660205
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 56076 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=663659 TSER=0 WS=6
-  2   0.000379     10.0.1.2 -> 10.0.1.3     TCP http-alt > 56076 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=695607 TSER=663659 WS=6
-  3   0.000400     10.0.1.3 -> 10.0.1.2     TCP 56076 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=663660 TSER=695607
-103147   8.562949     10.0.1.3 -> 10.0.1.2     TCP 56076 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=665800 TSER=697689
-103148   8.563297     10.0.1.2 -> 10.0.1.3     TCP http-alt > 56076 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=697748 TSER=665800
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 56078 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=671873 TSER=0 WS=6
-  2   0.000302     10.0.1.2 -> 10.0.1.3     TCP http-alt > 56078 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=703821 TSER=671873 WS=6
-  3   0.000325     10.0.1.3 -> 10.0.1.2     TCP 56078 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=671873 TSER=703821
-103016   8.565219     10.0.1.3 -> 10.0.1.2     TCP 56078 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=674014 TSER=705903
-103017   8.565571     10.0.1.2 -> 10.0.1.3     TCP http-alt > 56078 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=705962 TSER=674014
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37957 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=677396 TSER=0 WS=6
-  2   0.000295     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37957 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=709345 TSER=677396 WS=6
-  3   0.000319     10.0.1.3 -> 10.0.1.2     TCP 37957 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=677397 TSER=709345
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37959 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=682875 TSER=0 WS=6
-  2   0.000368     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37959 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=714824 TSER=682875 WS=6
-  3   0.000390     10.0.1.3 -> 10.0.1.2     TCP 37959 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=682875 TSER=714824
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37961 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=688406 TSER=0 WS=6
-  2   0.000270     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37961 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=720355 TSER=688406 WS=6
-  3   0.000292     10.0.1.3 -> 10.0.1.2     TCP 37961 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=688406 TSER=720355
-103285   8.615660     10.0.1.3 -> 10.0.1.2     TCP 37961 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=690560 TSER=722450
-103286   8.615994     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37961 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=722510 TSER=690560
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37963 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=694003 TSER=0 WS=6
-  2   0.000270     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37963 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=725953 TSER=694003 WS=6
-  3   0.000289     10.0.1.3 -> 10.0.1.2     TCP 37963 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=694004 TSER=725953
-103411   8.567407     10.0.1.3 -> 10.0.1.2     TCP 37963 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=696145 TSER=728034
-103412   8.567772     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37963 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=728095 TSER=696145
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37965 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=700567 TSER=0 WS=6
-  2   0.000319     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37965 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=732517 TSER=700567 WS=6
-  3   0.000341     10.0.1.3 -> 10.0.1.2     TCP 37965 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=700567 TSER=732517
-103149   8.567086     10.0.1.3 -> 10.0.1.2     TCP 37965 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=702709 TSER=734598
-103150   8.567420     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37965 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=734659 TSER=702709
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37967 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=706175 TSER=0 WS=6
-  2   0.000313     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37967 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=738126 TSER=706175 WS=6
-  3   0.000333     10.0.1.3 -> 10.0.1.2     TCP 37967 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=706176 TSER=738126
-103036   8.573167     10.0.1.3 -> 10.0.1.2     TCP 37967 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=708319 TSER=740208
-103037   8.573512     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37967 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=740270 TSER=708319
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37969 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=711738 TSER=0 WS=6
-  2   0.000372     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37969 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=743689 TSER=711738 WS=6
-  3   0.000397     10.0.1.3 -> 10.0.1.2     TCP 37969 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=711738 TSER=743689
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37971 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=716837 TSER=0 WS=6
-  2   0.000309     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37971 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=748789 TSER=716837 WS=6
-  3   0.000334     10.0.1.3 -> 10.0.1.2     TCP 37971 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=716837 TSER=748789
-103306   8.564131     10.0.1.3 -> 10.0.1.2     TCP 37971 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=718978 TSER=750870
-103307   8.564482     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37971 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=750930 TSER=718978
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37973 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=722498 TSER=0 WS=6
-  2   0.000394     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37973 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=754449 TSER=722498 WS=6
-  3   0.000420     10.0.1.3 -> 10.0.1.2     TCP 37973 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=722498 TSER=754449
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37975 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=730737 TSER=0 WS=6
-  2   0.000298     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37975 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=762689 TSER=730737 WS=6
-  3   0.000323     10.0.1.3 -> 10.0.1.2     TCP 37975 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=730737 TSER=762689
-103227   8.563334     10.0.1.3 -> 10.0.1.2     TCP 37975 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=732878 TSER=764771
-103228   8.563696     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37975 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=764830 TSER=732878
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37977 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=736096 TSER=0 WS=6
-  2   0.000316     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37977 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=768050 TSER=736096 WS=6
-  3   0.000338     10.0.1.3 -> 10.0.1.2     TCP 37977 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=736097 TSER=768050
-103195   8.559375     10.0.1.3 -> 10.0.1.2     TCP 37977 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=738236 TSER=770131
-103196   8.559800     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37977 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=770190 TSER=738236
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37979 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=741636 TSER=0 WS=6
-  2   0.000318     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37979 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=773589 TSER=741636 WS=6
-  3   0.000340     10.0.1.3 -> 10.0.1.2     TCP 37979 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=741636 TSER=773589
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 37981 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=746870 TSER=0 WS=6
-  2   0.000302     10.0.1.2 -> 10.0.1.3     TCP http-alt > 37981 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=778824 TSER=746870 WS=6
-  3   0.000322     10.0.1.3 -> 10.0.1.2     TCP 37981 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=746870 TSER=778824
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 57782 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=752343 TSER=0 WS=6
-  2   0.000300     10.0.1.2 -> 10.0.1.3     TCP http-alt > 57782 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=784297 TSER=752343 WS=6
-  3   0.000323     10.0.1.3 -> 10.0.1.2     TCP 57782 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=752343 TSER=784297
-103076   8.563932     10.0.1.3 -> 10.0.1.2     TCP 57782 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=754484 TSER=786379
-103077   8.564307     10.0.1.2 -> 10.0.1.3     TCP http-alt > 57782 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=786438 TSER=754484
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 57784 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=757988 TSER=0 WS=6
-  2   0.000332     10.0.1.2 -> 10.0.1.3     TCP http-alt > 57784 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=789943 TSER=757988 WS=6
-  3   0.000355     10.0.1.3 -> 10.0.1.2     TCP 57784 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=757989 TSER=789943
-103103   8.567760     10.0.1.3 -> 10.0.1.2     TCP 57784 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=760130 TSER=792026
-103104   8.568070     10.0.1.2 -> 10.0.1.3     TCP http-alt > 57784 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=792085 TSER=760130
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 57786 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=763514 TSER=0 WS=6
-  2   0.000307     10.0.1.2 -> 10.0.1.3     TCP http-alt > 57786 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=795468 TSER=763514 WS=6
-  3   0.000328     10.0.1.3 -> 10.0.1.2     TCP 57786 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=763514 TSER=795468
-103080   8.569337     10.0.1.3 -> 10.0.1.2     TCP 57786 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2560064 Len=0 TSV=765656 TSER=797552
-103081   8.569704     10.0.1.2 -> 10.0.1.3     TCP http-alt > 57786 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=797611 TSER=765656
-  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 57788 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=769092 TSER=0 WS=6
-  2   0.000302     10.0.1.2 -> 10.0.1.3     TCP http-alt > 57788 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=801047 TSER=769092 WS=6
-  3   0.000324     10.0.1.3 -> 10.0.1.2     TCP 57788 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=769092 TSER=801047
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 47119 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6575504 TSER=0 WS=6
+  2   0.000362     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47119 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6629240 TSER=6575504 WS=6
+  3   0.000383     10.0.1.3 -> 10.0.1.2     TCP 47119 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6575504 TSER=6629240
+103893   8.568593     10.0.1.3 -> 10.0.1.2     TCP 47119 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6577646 TSER=6631323
+103894   8.568970     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47119 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6631382 TSER=6577646
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69230 104667007   34665   2288224  103895 106955231
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 47121 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6580154 TSER=0 WS=6
+  2   0.000296     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47121 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6633891 TSER=6580154 WS=6
+  3   0.000318     10.0.1.3 -> 10.0.1.2     TCP 47121 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6580155 TSER=6633891
+103696   8.565815     10.0.1.3 -> 10.0.1.2     TCP 47121 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6582296 TSER=6635973
+103697   8.566202     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47121 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6636033 TSER=6582296
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69141 104661133   34557   2281096  103698 106942229
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 47123 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6584813 TSER=0 WS=6
+  2   0.000292     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47123 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6638550 TSER=6584813 WS=6
+  3   0.000314     10.0.1.3 -> 10.0.1.2     TCP 47123 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6584813 TSER=6638550
+103851   8.568591     10.0.1.3 -> 10.0.1.2     TCP 47123 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6586955 TSER=6640634
+103852   8.568976     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47123 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6640692 TSER=6586955
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69137 104660869   34716   2291590  103853 106952459
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 47125 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6589505 TSER=0 WS=6
+  2   0.000305     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47125 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6643243 TSER=6589505 WS=6
+  3   0.000327     10.0.1.3 -> 10.0.1.2     TCP 47125 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6589505 TSER=6643243
+103137   8.573359     10.0.1.3 -> 10.0.1.2     TCP 47125 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6591649 TSER=6645325
+103138   8.573736     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47125 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6645386 TSER=6591649
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69141 104661133   33998   2244202  103139 106905335
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 47129 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6594171 TSER=0 WS=6
+  2   0.000317     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47129 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6647908 TSER=6594171 WS=6
+  3   0.000341     10.0.1.3 -> 10.0.1.2     TCP 47129 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6594171 TSER=6647908
+103983   8.595909     10.0.1.3 -> 10.0.1.2     TCP 47129 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2568768 Len=0 TSV=6596320 TSER=6649997
+103984   8.596283     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47129 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6650058 TSER=6596320
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69162 104662519   34823   2298652  103985 106961171
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 47131 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6598856 TSER=0 WS=6
+  2   0.000316     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47131 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6652594 TSER=6598856 WS=6
+  3   0.000337     10.0.1.3 -> 10.0.1.2     TCP 47131 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6598857 TSER=6652594
+103777   8.575218     10.0.1.3 -> 10.0.1.2     TCP 47131 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6601000 TSER=6654678
+103778   8.575585     10.0.1.2 -> 10.0.1.3     TCP http-alt > 47131 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6654738 TSER=6601000
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69147 104661529   34632   2286046  103779 106947575
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34224 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6603537 TSER=0 WS=6
+  2   0.000316     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34224 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6657275 TSER=6603537 WS=6
+  3   0.000338     10.0.1.3 -> 10.0.1.2     TCP 34224 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6603537 TSER=6657275
+103840   8.565993     10.0.1.3 -> 10.0.1.2     TCP 34224 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6605678 TSER=6659357
+103841   8.566388     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34224 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6659417 TSER=6605678
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69138 104660935   34704   2290798  103842 106951733
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34226 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6608208 TSER=0 WS=6
+  2   0.000300     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34226 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6661947 TSER=6608208 WS=6
+  3   0.000323     10.0.1.3 -> 10.0.1.2     TCP 34226 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6608208 TSER=6661947
+103957   8.572098     10.0.1.3 -> 10.0.1.2     TCP 34226 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6610351 TSER=6664029
+103958   8.572476     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34226 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6664090 TSER=6610351
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69139 104661001   34820   2298454  103959 106959455
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34228 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6612863 TSER=0 WS=6
+  2   0.000298     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34228 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6666602 TSER=6612863 WS=6
+  3   0.000319     10.0.1.3 -> 10.0.1.2     TCP 34228 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6612863 TSER=6666602
+103696   8.575096     10.0.1.3 -> 10.0.1.2     TCP 34228 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6615007 TSER=6668685
+103697   8.575471     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34228 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6668746 TSER=6615007
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69138 104660935   34560   2281294  103698 106942229
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34230 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6617544 TSER=0 WS=6
+  2   0.000282     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34230 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6671284 TSER=6617544 WS=6
+  3   0.000304     10.0.1.3 -> 10.0.1.2     TCP 34230 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6617544 TSER=6671284
+103779   8.570477     10.0.1.3 -> 10.0.1.2     TCP 34230 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6619687 TSER=6673366
+103780   8.570848     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34230 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6673426 TSER=6619687
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69144 104661331   34637   2286376  103781 106947707
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34232 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6622215 TSER=0 WS=6
+  2   0.000286     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34232 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6675955 TSER=6622215 WS=6
+  3   0.000308     10.0.1.3 -> 10.0.1.2     TCP 34232 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6622216 TSER=6675955
+103932   8.571820     10.0.1.3 -> 10.0.1.2     TCP 34232 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6624358 TSER=6678038
+103933   8.572201     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34232 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6678098 TSER=6624358
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69141 104661133   34793   2296672  103934 106957805
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34236 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6626880 TSER=0 WS=6
+  2   0.000364     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34236 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6680620 TSER=6626880 WS=6
+  3   0.000386     10.0.1.3 -> 10.0.1.2     TCP 34236 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6626880 TSER=6680620
+103785   8.571708     10.0.1.3 -> 10.0.1.2     TCP 34236 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6629023 TSER=6682702
+103786   8.572099     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34236 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6682763 TSER=6629023
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69140 104661067   34647   2287036  103787 106948103
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34238 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6631545 TSER=0 WS=6
+  2   0.000276     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34238 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6685286 TSER=6631545 WS=6
+  3   0.000299     10.0.1.3 -> 10.0.1.2     TCP 34238 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6631545 TSER=6685286
+103752   8.564859     10.0.1.3 -> 10.0.1.2     TCP 34238 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6633686 TSER=6687367
+103753   8.565188     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34238 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6687427 TSER=6633686
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69138 104660935   34616   2284990  103754 106945925
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34240 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6636210 TSER=0 WS=6
+  2   0.000283     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34240 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6689951 TSER=6636210 WS=6
+  3   0.000304     10.0.1.3 -> 10.0.1.2     TCP 34240 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6636210 TSER=6689951
+104016   8.570027     10.0.1.3 -> 10.0.1.2     TCP 34240 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2565888 Len=0 TSV=6638353 TSER=6692032
+104017   8.570432     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34240 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6692094 TSER=6638353
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69189 104664301   34829   2299048  104018 106963349
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34242 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6640876 TSER=0 WS=6
+  2   0.000302     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34242 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6694617 TSER=6640876 WS=6
+  3   0.000324     10.0.1.3 -> 10.0.1.2     TCP 34242 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6640876 TSER=6694617
+103666   8.567681     10.0.1.3 -> 10.0.1.2     TCP 34242 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6643018 TSER=6696699
+103667   8.568047     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34242 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6696759 TSER=6643018
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69138 104660935   34530   2279314  103668 106940249
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34244 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6645534 TSER=0 WS=6
+  2   0.000293     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34244 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6699275 TSER=6645534 WS=6
+  3   0.000317     10.0.1.3 -> 10.0.1.2     TCP 34244 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6645534 TSER=6699275
+103858   8.565339     10.0.1.3 -> 10.0.1.2     TCP 34244 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6647675 TSER=6701358
+103859   8.565746     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34244 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6701417 TSER=6647675
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69140 104661067   34720   2291854  103860 106952921
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34246 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6650205 TSER=0 WS=6
+  2   0.000336     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34246 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6703947 TSER=6650205 WS=6
+  3   0.000358     10.0.1.3 -> 10.0.1.2     TCP 34246 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6650205 TSER=6703947
+103778   8.572153     10.0.1.3 -> 10.0.1.2     TCP 34246 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6652348 TSER=6706030
+103779   8.572496     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34246 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6706090 TSER=6652348
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69139 104661001   34641   2286640  103780 106947641
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34248 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6654870 TSER=0 WS=6
+  2   0.000297     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34248 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6708612 TSER=6654870 WS=6
+  3   0.000317     10.0.1.3 -> 10.0.1.2     TCP 34248 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6654870 TSER=6708612
+103957   8.565699     10.0.1.3 -> 10.0.1.2     TCP 34248 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2554304 Len=0 TSV=6657011 TSER=6710694
+103958   8.566077     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34248 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6710754 TSER=6657011
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69139 104661001   34820   2298454  103959 106959455
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34250 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6659530 TSER=0 WS=6
+  2   0.000284     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34250 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6713273 TSER=6659530 WS=6
+  3   0.000305     10.0.1.3 -> 10.0.1.2     TCP 34250 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6659530 TSER=6713273
+103838   8.567140     10.0.1.3 -> 10.0.1.2     TCP 34250 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6661672 TSER=6715354
+103839   8.567513     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34250 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6715415 TSER=6661672
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69137 104660869   34703   2290732  103840 106951601
+================================================================================
+  1   0.000000     10.0.1.3 -> 10.0.1.2     TCP 34252 > http-alt [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=6664203 TSER=0 WS=6
+  2   0.000367     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34252 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 TSV=6717946 TSER=6664203 WS=6
+  3   0.000388     10.0.1.3 -> 10.0.1.2     TCP 34252 > http-alt [ACK] Seq=1 Ack=1 Win=5888 Len=0 TSV=6664203 TSER=6717946
+103881   8.563186     10.0.1.3 -> 10.0.1.2     TCP 34252 > http-alt [FIN, ACK] Seq=327 Ack=100097820 Win=2580480 Len=0 TSV=6666344 TSER=6720027
+103882   8.563596     10.0.1.2 -> 10.0.1.3     TCP http-alt > 34252 [FIN, ACK] Seq=100097820 Ack=328 Win=15552 Len=0 TSV=6720087 TSER=6666344
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |
+10.0.1.3             <-> 10.0.1.2               69154 104661991   34729   2292448  103883 106954439
+================================================================================
